@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ChiTietHoaDons>
+  <ChiTietHoaDon id="1" maHD="3" maSP="1" soLuong="10" giaBan="100000" />
+  <ChiTietHoaDon id="2" maHD="4" maSP="1" soLuong="1" giaBan="100000" />
+  <ChiTietHoaDon id="3" maHD="5" maSP="1" soLuong="5" giaBan="100000" />
+  <ChiTietHoaDon id="4" maHD="6" maSP="3" soLuong="5" giaBan="200000" />
+  <ChiTietHoaDon id="5" maHD="6" maSP="4" soLuong="8" giaBan="200000" />
+  <ChiTietHoaDon id="6" maHD="7" maSP="2" soLuong="10" giaBan="100000" />
+  <ChiTietHoaDon id="7" maHD="8" maSP="2" soLuong="5" giaBan="100000" />
+</ChiTietHoaDons>

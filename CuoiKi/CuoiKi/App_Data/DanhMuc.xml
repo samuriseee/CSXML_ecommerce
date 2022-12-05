@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<DanhMucs>
+  <DanhMuc id="1" tenDanhMuc="Áo thun" />
+  <DanhMuc id="2" tenDanhMuc="Áo len" />
+  <DanhMuc id="3" tenDanhMuc="Áo khoác" />
+  <DanhMuc id="4" tenDanhMuc="Áo so mi" />
+  <DanhMuc id="5" tenDanhMuc="Áo dài" />
+</DanhMucs>

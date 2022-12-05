@@ -1,0 +1,86 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.ThongKeSanPhamBanChay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <i class="fa fa-home"></i> &nbsp;  Thống Kê 
+}
+
+@*<p class="text-center nor-size">Thống kê 30 ngày vừa qua</p>*@
+
+<div class="col-lg-12 form-group">
+    <div class="col-md-6">
+        
+        <div>
+            
+            <div>
+                <div class="mini-stat clearfix">
+                    <span class="mini-stat-icon orange"><i class="fa fa-eye""></i></span>
+                    <div class="mini-stat-info">
+                        <span>@ViewBag.HDDaDuyet</span>
+                        Đơn Hàng Đã Duyệt
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mini-stat clearfix">
+                    <span class="mini-stat-icon orange"><i class="fa fa-gavel"></i></span>
+                    <div class="mini-stat-info">
+                        <span>@ViewBag.HDChuaDuyet</span>
+                        Đơn Hàng Chưa Duyệt
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-md-6" style="width: 300px">
+        <div class="card-body-custom">
+            <div>
+                <canvas id="PMChart" data-customer1="@ViewBag.num1" data-customer2="@ViewBag.num2" data-customer3="@ViewBag.num3"></canvas>
+            </div>
+            <h5 class="text-center mt-2">Biểu đồ Top 3 khách hàng tiềm năng nhất</h5>
+        </div>
+    </div>
+
+    
+    <div class="col-lg-12">
+        <h5>Top 10 sản phẩm bán chạy</h5>
+        <div class="table-responsive">
+            <table id="user-table" class="table table-lg table-hover-custom">
+                <thead>
+                    <tr>
+                        <th class="custom-size">STT</th>
+                        <th class="text-center custom-size">Mã SP</th>
+                        <th class="text-center custom-size">Tên sản phẩm</th>
+                        <th class="text-center custom-size">Số Lượng Đã Bán</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ var i = 1;}
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.maGiay)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.tenGiay)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.soLuongBan)
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+            <div id="users-null" class="null-feedback"></div>
+        </div>
+    </div>
+</div>
+

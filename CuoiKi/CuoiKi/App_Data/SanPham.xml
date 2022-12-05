@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<SanPhams>
+  <SanPham id="1" tenSanPham="Áo thun tron" maDM="1" gia="100000" soLuong="32" tinhTrang="1" hinhAnh="Aothun-Den-1.jpg" />
+  <SanPham id="2" tenSanPham="Áo thun cổ tim" maDM="1" gia="100000" soLuong="30" tinhTrang="1" hinhAnh="ao-thun-co-tim_(4).jpg" />
+  <SanPham id="3" tenSanPham="Áo len đỏ" maDM="2" gia="200000" soLuong="0" tinhTrang="1" hinhAnh="aolendo.jpg" />
+  <SanPham id="4" tenSanPham="Áo so mi h?ng" maDM="4" gia="200000" soLuong="10" tinhTrang="1" hinhAnh="somi.jpg" />
+  <SanPham id="5" tenSanPham="Ao thun tron 3" maDM="1" gia="100000" soLuong="10" tinhTrang="0" hinhAnh="Aothun-Den-1.jpg" />
+</SanPhams>

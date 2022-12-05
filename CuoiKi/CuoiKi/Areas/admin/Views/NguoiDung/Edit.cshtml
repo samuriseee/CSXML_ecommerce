@@ -1,0 +1,118 @@
+﻿@model CuoiKi.Areas.admin.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+@section header{
+    <i class="fa fa-home"></i> &nbsp; CHI TIẾT NGƯỜI DÙNG
+}
+@*<style>
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control, .form-control {
+        cursor: not-allowed;
+        background-color: #fff;
+        opacity: 1;
+        color: #32323A;
+    }
+</style>*@
+@using (Html.BeginForm("Edit", "NguoiDung", FormMethod.Post))
+{
+<div class="form-horizontal">
+    <div class="col-lg-12 form-group ">
+        <div class="col-md-6">
+            @Html.ActionLink("Quay lại", "Index", "NguoiDung", new {  @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="col-lg-12 form-group">
+        <div class="form-group">
+            @Html.LabelFor(model => model.tenTK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tenTK, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tenTK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.matKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.matKhau, new { @class = "form-control", @type = "password" })
+                @Html.ValidationMessageFor(model => model.matKhau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ten, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ten, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ten, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.diaChi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.diaChi, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.sdt, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.sdt, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.sdt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.gioiTinh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="gioiTinh" class="form-control">
+                    <option>Chọn giới tính</option>
+                    <option value="0" @if (Model.gioiTinh == "0") { <text> selected</text> }>
+                        Nữ
+                    </option>
+                    <option value="1" @if (Model.gioiTinh == "1") { <text> selected</text>}>Nam</option>
+
+                </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.cmnd, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.cmnd, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.cmnd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.maQuyen, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.maQuyen, (IEnumerable<SelectListItem>)ViewBag.quyen, "---chọn quyen---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.maQuyen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.trangThai, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+
+                    <div class="col-md-3">
+                        @Html.CheckBoxFor(model => model.trangThai, new { @class = "form-control", @style = "width: 10%" })
+                        @Html.ValidationMessageFor(model => model.trangThai, "", new { @class = "text-danger" })
+                        (Bỏ check để khóa tài khoản)
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cập nhật" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+</div>
+}
+
